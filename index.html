@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="DIVINE 팀 유니폼 티셔츠·집업 자켓, 로고 티셔츠·후드집업 예약 주문 안내">
+<meta property="og:type" content="website">
+<meta property="og:title" content="디바인 팀 유니폼">
+<meta property="og:description" content="DIVINE 팀 유니폼 티셔츠·집업 자켓, 로고 티셔츠·후드집업 예약 주문 안내">
+<style>:root{color-scheme:light}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>디바인 팀 유니폼</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&family=Noto+Sans+KR:wght@400;500;700&family=Rajdhani:wght@700&display=swap">
+<style>
+  /* 레이아웃: 시안 이미지와 같은 흰 바탕 위에 옷만 크게. 텍스트는 이름·가격·한 줄 설명으로 제한 */
+  :root {
+    --bg: #fefefe;
+    --fg: #0c1424;
+    --muted: #707b8c;
+    --line: #e4e8ee;
+    --accent: #1769c8;
+    --font-display: "Barlow Condensed", "Noto Sans KR", "Arial Narrow", sans-serif;
+    --font-body: "Noto Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: var(--font-body); font-size: 15px; line-height: 1.7;
+    word-break: keep-all; overflow-wrap: break-word;
+  }
+  h1, h2, h3, p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .wrap { width: 100%; max-width: 900px; margin-inline: auto; padding-inline: 20px; }
+
+  /* 상단 */
+  .top { padding-block: 40px 8px; text-align: center; }
+  .mark { font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 34px; letter-spacing: .04em; text-decoration: none; }
+  .mark span { color: var(--accent); }
+  .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 22px; margin-top: 10px; font-size: 14px; color: var(--muted); }
+  .nav a { text-decoration: none; padding-block: 6px; }
+  .nav a:hover { color: var(--fg); }
+
+  /* 상품 */
+  .item { padding-block: 140px 8px; }
+  .item header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+  .item h2 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
+  .price { font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 24px; font-variant-numeric: tabular-nums; }
+  .price small { font-family: var(--font-body); font-style: normal; font-weight: 500; font-size: 13px; color: var(--muted); margin-left: 2px; }
+  figure { margin: 0; }
+  figure + figure { margin-top: 88px; }
+  figcaption { font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .views { display: flex; align-items: flex-end; gap: clamp(28px, 5vw, 48px); }
+  .views img { display: block; min-width: 0; height: auto; }
+  .hint { display: none; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  @media (max-width: 640px) {
+    .views { min-width: 680px; }
+    .hint { display: block; }
+  }
+  .marking { margin-top: 48px; }
+  .mk-title { font-weight: 700; font-size: 15px; margin-bottom: 12px; }
+  .mk-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mk-list button { font-family: var(--font-display); font-style: italic; font-weight: 800; letter-spacing: .08em; font-size: 19px; line-height: 1; background: var(--bg); color: var(--fg); border: 1px solid var(--fg); padding: 10px 16px; cursor: pointer; }
+  .mk-list button:hover { background: var(--line); }
+  .mk-list button[aria-checked="true"] { background: var(--fg); color: var(--bg); }
+  .mk-list button.none { font-family: var(--font-body); font-style: normal; font-weight: 500; font-size: 14px; letter-spacing: 0; border-color: var(--line); color: var(--muted); }
+  .mk-list button.none[aria-checked="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .mk-previews { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 5vw, 48px); max-width: 640px; margin-top: 32px; }
+  .mk-cap { font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .mk-canvas { display: block; width: 100%; height: auto; background: var(--bg); }
+  .mk-note { margin-top: 12px; font-size: 13px; color: var(--muted); }
+  .line { margin-top: 48px; font-size: 14px; color: var(--muted); }
+  .line b { color: var(--fg); font-weight: 500; }
+
+  /* 안내 */
+  .info { padding-block: 88px 24px; }
+  .info + .info { padding-top: 56px; }
+  .info h2 { font-size: 20px; font-weight: 700; margin-bottom: 18px; }
+  .tablebox { overflow-x: auto; }
+  .tablebox + .tablebox { margin-top: 24px; }
+  table { border-collapse: collapse; width: 100%; min-width: 440px; font-variant-numeric: tabular-nums; font-size: 14px; }
+  caption { text-align: left; font-size: 13px; color: var(--muted); padding-bottom: 6px; }
+  th, td { padding: 10px 8px; text-align: center; border-top: 1px solid var(--line); }
+  thead th { color: var(--muted); font-weight: 400; font-size: 12px; }
+  tbody th { font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 17px; letter-spacing: .04em; }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 1px solid var(--line); }
+  .note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+  dl { margin: 0; display: grid; grid-template-columns: 6em minmax(0, 1fr); border-top: 1px solid var(--line); }
+  dt, dd { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  dt { font-weight: 500; }
+  dd { color: var(--muted); }
+  dd b { color: var(--fg); font-weight: 500; }
+  .kid { color: var(--fg); user-select: all; white-space: nowrap; }
+  .copy { font: inherit; font-size: 12px; color: var(--accent); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; margin-left: 6px; cursor: pointer; }
+  .copy:hover { border-color: var(--accent); }
+
+  footer { padding-block: 64px 48px; text-align: center; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="top wrap" id="top">
+  <a class="mark" href="#top">DIVINE<span>.</span></a>
+  <nav class="nav" aria-label="바로가기">
+    <a href="#jersey">유니폼 티</a>
+    <a href="#jacket">집업 자켓</a>
+    <a href="#tee">로고 티</a>
+    <a href="#hood">후드집업</a>
+    <a href="#size">사이즈</a>
+    <a href="#order">주문 안내</a>
+  </nav>
+</header>
+
+<main>
+  <section class="item wrap" id="jersey">
+    <header>
+      <h2>팀 유니폼 티셔츠</h2>
+      <p class="price">39,000<small>원</small></p>
+    </header>
+    <figure>
+      <figcaption>White</figcaption>
+      <div class="scroll"><div class="views"><img src="views/jersey-white-front.jpg" alt="팀 유니폼 티셔츠 화이트 앞면" width="250" height="314" style="flex:0.796 1 0"><img src="views/jersey-white-back.jpg" alt="팀 유니폼 티셔츠 화이트 뒷면" width="316" height="379" style="flex:0.834 1 0"><img src="views/jersey-white-left.jpg" alt="팀 유니폼 티셔츠 화이트 좌측면" width="111" height="314" style="flex:0.354 1 0"><img src="views/jersey-white-right.jpg" alt="팀 유니폼 티셔츠 화이트 우측면" width="112" height="314" style="flex:0.357 1 0"></div></div>
+    </figure>
+    <figure>
+      <figcaption>Black</figcaption>
+      <div class="scroll"><div class="views"><img src="views/jersey-black-front.jpg" alt="팀 유니폼 티셔츠 블랙 앞면" width="250" height="314" style="flex:0.796 1 0" loading="lazy"><img src="views/jersey-black-back.jpg" alt="팀 유니폼 티셔츠 블랙 뒷면" width="241" height="314" style="flex:0.768 1 0" loading="lazy"><img src="views/jersey-black-left.jpg" alt="팀 유니폼 티셔츠 블랙 좌측면" width="118" height="314" style="flex:0.376 1 0" loading="lazy"><img src="views/jersey-black-right.jpg" alt="팀 유니폼 티셔츠 블랙 우측면" width="119" height="314" style="flex:0.379 1 0" loading="lazy"></div></div>
+    </figure>
+    <p class="hint">좌우로 밀어서 전체를 볼 수 있습니다.</p>
+    <div class="marking" data-mk="jersey">
+      <p class="mk-title">선수 마킹 선택</p>
+      <div class="mk-list" role="radiogroup" aria-label="팀 유니폼 티셔츠 선수 마킹 선택"><button type="button" role="radio" aria-checked="true" data-name="LOKI">LOKI</button><button type="button" role="radio" aria-checked="false" data-name="BARPO">BARPO</button><button type="button" role="radio" aria-checked="false" data-name="TOSI">TOSI</button><button type="button" role="radio" aria-checked="false" data-name="STELLA">STELLA</button><button type="button" role="radio" aria-checked="false" data-name="WONDERFUL">WONDERFUL</button><button type="button" role="radio" aria-checked="false" class="none" data-name="">마킹X</button></div>
+      <div class="mk-previews"><div class="mk-item"><p class="mk-cap">White</p><canvas class="mk-canvas" role="img" aria-label="팀 유니폼 티셔츠 White 뒷면 미리보기" data-src="views/jersey-white-back-blank.jpg" data-w="316" data-h="379" data-cx="151.5" data-base="125.0" data-cap="27.0" data-maxw="146.0" data-ink="#121212" width="632" height="758"></canvas></div><div class="mk-item"><p class="mk-cap">Black</p><canvas class="mk-canvas" role="img" aria-label="팀 유니폼 티셔츠 Black 뒷면 미리보기" data-src="views/jersey-black-back-blank.jpg" data-w="249" data-h="309" data-cx="125.5" data-base="104.5" data-cap="21.5" data-maxw="106.0" data-ink="#f4f4f4" width="498" height="618"></canvas></div></div>
+      <p class="mk-note">선택한 이름이 등 뒤쪽 로고 아래에 들어갑니다. 미리보기는 실제 마킹과 글자 모양이 조금 다를 수 있습니다. 주문할 때 선수 이름을 함께 알려 주세요.</p>
+    </div>
+    <p class="line"><b>폴리에스터 100% · 레귤러 핏 · 전체 승화전사.</b></p>
+  </section>
+
+  <section class="item wrap" id="jacket">
+    <header>
+      <h2>팀 유니폼 집업 자켓</h2>
+      <p class="price">69,000<small>원</small></p>
+    </header>
+    <figure>
+      <figcaption>White</figcaption>
+      <div class="scroll"><div class="views"><img src="views/jacket-white-front.jpg" alt="팀 유니폼 집업 자켓 화이트 앞면" width="242" height="331" style="flex:0.731 1 0" loading="lazy"><img src="views/jacket-white-back.jpg" alt="팀 유니폼 집업 자켓 화이트 뒷면" width="243" height="331" style="flex:0.734 1 0" loading="lazy"><img src="views/jacket-white-left.jpg" alt="팀 유니폼 집업 자켓 화이트 좌측면" width="119" height="331" style="flex:0.360 1 0" loading="lazy"><img src="views/jacket-white-right.jpg" alt="팀 유니폼 집업 자켓 화이트 우측면" width="141" height="331" style="flex:0.426 1 0" loading="lazy"></div></div>
+    </figure>
+    <figure>
+      <figcaption>Black</figcaption>
+      <div class="scroll"><div class="views"><img src="views/jacket-black-front.jpg" alt="팀 유니폼 집업 자켓 블랙 앞면" width="237" height="332" style="flex:0.714 1 0" loading="lazy"><img src="views/jacket-black-back.jpg" alt="팀 유니폼 집업 자켓 블랙 뒷면" width="253" height="332" style="flex:0.762 1 0" loading="lazy"><img src="views/jacket-black-left.jpg" alt="팀 유니폼 집업 자켓 블랙 좌측면" width="125" height="332" style="flex:0.377 1 0" loading="lazy"><img src="views/jacket-black-right.jpg" alt="팀 유니폼 집업 자켓 블랙 우측면" width="131" height="332" style="flex:0.395 1 0" loading="lazy"></div></div>
+    </figure>
+    <p class="hint">좌우로 밀어서 전체를 볼 수 있습니다.</p>
+    <div class="marking" data-mk="jacket">
+      <p class="mk-title">선수 마킹 선택</p>
+      <div class="mk-list" role="radiogroup" aria-label="팀 유니폼 집업 자켓 선수 마킹 선택"><button type="button" role="radio" aria-checked="true" data-name="LOKI">LOKI</button><button type="button" role="radio" aria-checked="false" data-name="BARPO">BARPO</button><button type="button" role="radio" aria-checked="false" data-name="TOSI">TOSI</button><button type="button" role="radio" aria-checked="false" data-name="STELLA">STELLA</button><button type="button" role="radio" aria-checked="false" data-name="WONDERFUL">WONDERFUL</button><button type="button" role="radio" aria-checked="false" class="none" data-name="">마킹X</button></div>
+      <div class="mk-previews"><div class="mk-item"><p class="mk-cap">White</p><canvas class="mk-canvas" role="img" aria-label="팀 유니폼 집업 자켓 White 뒷면 미리보기" data-src="views/jacket-white-back-blank.jpg" data-w="245" data-h="316" data-cx="118.5" data-base="120.0" data-cap="21.0" data-maxw="106.0" data-ink="#121212" width="490" height="632"></canvas></div><div class="mk-item"><p class="mk-cap">Black</p><canvas class="mk-canvas" role="img" aria-label="팀 유니폼 집업 자켓 Black 뒷면 미리보기" data-src="views/jacket-black-back-blank.jpg" data-w="259" data-h="316" data-cx="126.0" data-base="121.0" data-cap="21.5" data-maxw="104.0" data-ink="#f4f4f4" width="518" height="632"></canvas></div></div>
+      <p class="mk-note">선택한 이름이 등 뒤쪽 로고 아래에 들어갑니다. 미리보기는 실제 마킹과 글자 모양이 조금 다를 수 있습니다. 주문할 때 선수 이름을 함께 알려 주세요.</p>
+    </div>
+    <p class="line"><b>폴리에스터 트랙 원단 · 레귤러 핏 · 소매 패턴 승화전사.</b></p>
+  </section>
+
+  <section class="item wrap" id="tee">
+    <header>
+      <h2>DIVINE 로고 티셔츠</h2>
+      <p class="price">29,000<small>원</small></p>
+    </header>
+    <figure>
+      <figcaption>Black</figcaption>
+      <div class="scroll"><div class="views"><img src="views/tee-black-front.jpg" alt="DIVINE 로고 티셔츠 블랙 앞면" width="251" height="273" style="flex:0.919 1 0" loading="lazy"><img src="views/tee-black-back.jpg" alt="DIVINE 로고 티셔츠 블랙 뒷면" width="245" height="273" style="flex:0.897 1 0" loading="lazy"><img src="views/tee-black-left.jpg" alt="DIVINE 로고 티셔츠 블랙 좌측면" width="116" height="273" style="flex:0.425 1 0" loading="lazy"><img src="views/tee-black-right.jpg" alt="DIVINE 로고 티셔츠 블랙 우측면" width="118" height="273" style="flex:0.432 1 0" loading="lazy"></div></div>
+    </figure>
+    <figure>
+      <figcaption>White</figcaption>
+      <div class="scroll"><div class="views"><img src="views/tee-white-front.jpg" alt="DIVINE 로고 티셔츠 화이트 앞면" width="251" height="277" style="flex:0.906 1 0" loading="lazy"><img src="views/tee-white-back.jpg" alt="DIVINE 로고 티셔츠 화이트 뒷면" width="248" height="277" style="flex:0.895 1 0" loading="lazy"><img src="views/tee-white-left.jpg" alt="DIVINE 로고 티셔츠 화이트 좌측면" width="114" height="277" style="flex:0.412 1 0" loading="lazy"><img src="views/tee-white-right.jpg" alt="DIVINE 로고 티셔츠 화이트 우측면" width="114" height="277" style="flex:0.412 1 0" loading="lazy"></div></div>
+    </figure>
+    <p class="hint">좌우로 밀어서 전체를 볼 수 있습니다.</p>
+    <p class="line"><b>면 혼방 · 오버핏 · 디지털 프린트.</b> 가슴 왼쪽 링 로고, 등 상단 DIVINE 워드마크.</p>
+  </section>
+
+  <section class="item wrap" id="hood">
+    <header>
+      <h2>DIVINE 후드집업</h2>
+      <p class="price">59,000<small>원</small></p>
+    </header>
+    <figure>
+      <figcaption>Black</figcaption>
+      <div class="scroll"><div class="views"><img src="views/zip-black-front.jpg" alt="DIVINE 후드집업 블랙 앞면" width="243" height="307" style="flex:0.792 1 0" loading="lazy"><img src="views/zip-black-back.jpg" alt="DIVINE 후드집업 블랙 뒷면" width="247" height="307" style="flex:0.805 1 0" loading="lazy"><img src="views/zip-black-left.jpg" alt="DIVINE 후드집업 블랙 좌측면" width="125" height="307" style="flex:0.407 1 0" loading="lazy"><img src="views/zip-black-right.jpg" alt="DIVINE 후드집업 블랙 우측면" width="123" height="307" style="flex:0.401 1 0" loading="lazy"></div></div>
+    </figure>
+    <figure>
+      <figcaption>White</figcaption>
+      <div class="scroll"><div class="views"><img src="views/zip-white-front.jpg" alt="DIVINE 후드집업 화이트 앞면" width="245" height="309" style="flex:0.793 1 0" loading="lazy"><img src="views/zip-white-back.jpg" alt="DIVINE 후드집업 화이트 뒷면" width="253" height="309" style="flex:0.819 1 0" loading="lazy"><img src="views/zip-white-left.jpg" alt="DIVINE 후드집업 화이트 좌측면" width="116" height="309" style="flex:0.375 1 0" loading="lazy"><img src="views/zip-white-right.jpg" alt="DIVINE 후드집업 화이트 우측면" width="113" height="309" style="flex:0.366 1 0" loading="lazy"></div></div>
+    </figure>
+    <p class="hint">좌우로 밀어서 전체를 볼 수 있습니다.</p>
+    <p class="line"><b>기모 스웨트 원단 · 오버핏 · 디지털 프린트.</b> 금속 지퍼, 앞 포켓, 리브 마감.</p>
+  </section>
+
+  <section class="info wrap" id="size">
+    <h2>사이즈표</h2>
+    <div class="tablebox">
+      <table>
+        <caption>티셔츠류 (팀 유니폼 티셔츠 · 로고 티셔츠), 단위 cm</caption>
+        <thead><tr><th scope="col">사이즈</th><th scope="col">가슴단면</th><th scope="col">총장</th><th scope="col">어깨너비</th><th scope="col">소매길이</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">S</th><td>52</td><td>69</td><td>45</td><td>20</td></tr>
+          <tr><th scope="row">M</th><td>54</td><td>71</td><td>47</td><td>21</td></tr>
+          <tr><th scope="row">L</th><td>56</td><td>73</td><td>49</td><td>22</td></tr>
+          <tr><th scope="row">XL</th><td>58</td><td>75</td><td>51</td><td>23</td></tr>
+          <tr><th scope="row">2XL</th><td>60</td><td>77</td><td>53</td><td>24</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tablebox">
+      <table>
+        <caption>집업류 (팀 유니폼 집업 자켓 · 후드집업), 단위 cm</caption>
+        <thead><tr><th scope="col">사이즈</th><th scope="col">가슴단면</th><th scope="col">총장</th><th scope="col">어깨너비</th><th scope="col">소매길이</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">S</th><td>56</td><td>66</td><td>50</td><td>58</td></tr>
+          <tr><th scope="row">M</th><td>58</td><td>68</td><td>52</td><td>60</td></tr>
+          <tr><th scope="row">L</th><td>60</td><td>70</td><td>54</td><td>62</td></tr>
+          <tr><th scope="row">XL</th><td>62</td><td>72</td><td>56</td><td>64</td></tr>
+          <tr><th scope="row">2XL</th><td>64</td><td>74</td><td>58</td><td>66</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">모든 상품은 남녀공용입니다. 측정 방법에 따라 1~3cm 차이가 날 수 있습니다.</p>
+  </section>
+
+  <section class="info wrap" id="order">
+    <h2>주문 안내</h2>
+    <dl>
+      <dt>문의</dt><dd>카카오톡 채널 <b>디바인 유니폼 주문제작</b> <span class="kid" id="kid">@divine_uniform</span> <button type="button" class="copy" id="copyid">ID 복사</button></dd>
+      <dt>주문</dt><dd>10월 15일(목)부터 10월 21일(수)까지 주문서를 받습니다. 마감 후에는 추가 주문이 어렵습니다.</dd>
+      <dt>결제</dt><dd>계좌이체입니다. 주문서를 제출한 뒤 안내된 계좌로 입금해 주세요. 입금이 확인되면 주문이 확정됩니다.</dd>
+      <dt>제작</dt><dd>제작과 배송 일정은 추후 안내드립니다.</dd>
+      <dt>배송</dt><dd>택배 발송, 배송비 3,000원. 100,000원 이상 주문 시 무료입니다. 제주도와 도서산간 지역은 5,000원입니다.</dd>
+      <dt>교환 · 환불</dt><dd>이름 마킹 상품과 제작이 시작된 상품은 단순 변심으로 교환·환불이 어렵습니다. 불량이나 오배송은 수령 후 7일 안에 연락 주세요.</dd>
+    </dl>
+  </section>
+</main>
+
+<footer class="wrap">상품 이미지는 시안이며 실제 제품과 색감이 다를 수 있습니다.</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById("copyid"), id = document.getElementById("kid");
+    if (!btn || !id) return;
+    btn.addEventListener("click", function () {
+      var done = function () { btn.textContent = "복사됨"; setTimeout(function () { btn.textContent = "ID 복사"; }, 1600); };
+      var select = function () {
+        var r = document.createRange(); r.selectNodeContents(id);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        btn.textContent = "길게 눌러 복사";
+      };
+      try {
+        navigator.clipboard.writeText("@divine_uniform").then(done, select);
+      } catch (e) { select(); }
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var FAM = 'Rajdhani, "Barlow Semi Condensed", "Arial Narrow", sans-serif';
+    var fontReady = (document.fonts && document.fonts.load) ? document.fonts.load('700 40px Rajdhani', 'LOKI').catch(function () {}) : Promise.resolve();
+    function loadImg(src) {
+      return new Promise(function (res) { var i = new Image(); i.onload = function () { res(i); }; i.onerror = function () { res(null); }; i.src = src; });
+    }
+    document.querySelectorAll('.marking[data-mk]').forEach(function (block) {
+      var cvs = [].slice.call(block.querySelectorAll('canvas.mk-canvas'));
+      var imgs = [], name = 'LOKI', K = 2;
+      function draw() {
+        cvs.forEach(function (cv, i) {
+          var img = imgs[i]; if (!img) return;
+          var W = +cv.dataset.w, H = +cv.dataset.h, ctx = cv.getContext('2d');
+          ctx.setTransform(K, 0, 0, K, 0, 0);
+          ctx.clearRect(0, 0, W, H);
+          ctx.drawImage(img, 0, 0, W, H);
+          cv.setAttribute('aria-label', (cv.getAttribute('aria-label') || '').split(' / ')[0] + ' / ' + (name ? '마킹 ' + name : '마킹 없음'));
+          if (!name) return;
+          var cap = +cv.dataset.cap, cx = +cv.dataset.cx, base = +cv.dataset.base, maxw = +cv.dataset.maxw;
+          ctx.font = '700 100px ' + FAM;
+          var asc = ctx.measureText('H').actualBoundingBoxAscent;
+          var ratio = asc > 0 ? asc / 100 : 0.66;
+          var size = cap / ratio;
+          ctx.font = '700 ' + size + 'px ' + FAM;
+          var w = ctx.measureText(name).width, sx = 1, sz = 1;
+          if (w > maxw) { var s = maxw / w; sx = Math.max(s, 0.82); sz = s / sx; }
+          ctx.save();
+          ctx.translate(cx, base - cap * (1 - sz) / 2);
+          ctx.scale(sx, 1);
+          ctx.font = '700 ' + (size * sz) + 'px ' + FAM;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'alphabetic';
+          ctx.fillStyle = cv.dataset.ink;
+          ctx.globalAlpha = 0.96;
+          ctx.fillText(name, 0, 0);
+          ctx.restore();
+        });
+      }
+      Promise.all(cvs.map(function (cv) { return loadImg(cv.dataset.src); })).then(function (list) {
+        imgs = list; draw(); fontReady.then(draw);
+      });
+      var btns = [].slice.call(block.querySelectorAll('button[role="radio"]'));
+      btns.forEach(function (b, i) {
+        b.addEventListener('click', function () {
+          btns.forEach(function (o) { o.setAttribute('aria-checked', o === b ? 'true' : 'false'); });
+          name = b.dataset.name; draw();
+        });
+        b.addEventListener('keydown', function (e) {
+          var d = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : (e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0);
+          if (!d) return;
+          e.preventDefault();
+          var n = btns[(i + d + btns.length) % btns.length]; n.focus(); n.click();
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
