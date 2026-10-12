@@ -67,33 +67,33 @@
     .catalog img { width: 780px; max-width: none; }
     .hint { display: block; }
   }
-  .marking { margin-top: 48px; }
-  .mk-title { font-weight: 700; font-size: 15px; margin-bottom: 12px; }
-  .mk-list { display: flex; flex-wrap: wrap; gap: 8px; }
-  .mk-list button { font-family: var(--font-display); font-style: italic; font-weight: 800; letter-spacing: .08em; font-size: 19px; line-height: 1; background: var(--bg); color: var(--fg); border: 1px solid var(--fg); padding: 10px 16px; cursor: pointer; }
+  .marking { margin: 40px auto 0; max-width: 540px; text-align: center; }
+  .mk-title { font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+  .mk-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+  .mk-list button { font-family: var(--font-display); font-style: italic; font-weight: 800; letter-spacing: .08em; font-size: 14px; line-height: 1; background: var(--bg); color: var(--fg); border: 1px solid var(--fg); padding: 7px 11px; cursor: pointer; }
   .mk-list button:hover { background: var(--line); }
   .mk-list button[aria-checked="true"] { background: var(--fg); color: var(--bg); }
-  .mk-list button.none { font-family: var(--font-body); font-style: normal; font-weight: 500; font-size: 14px; letter-spacing: 0; border-color: var(--line); color: var(--muted); }
+  .mk-list button.none { font-family: var(--font-body); font-style: normal; font-weight: 500; font-size: 12px; letter-spacing: 0; border-color: var(--line); color: var(--muted); }
   .mk-list button.none[aria-checked="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
-  .mk-previews { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 5vw, 48px); max-width: 640px; margin-top: 32px; }
-  .mk-cap { font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .mk-previews { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 4vw, 28px); max-width: 400px; margin: 24px auto 0; }
+  .mk-cap { font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
   .mk-canvas { display: block; width: 100%; height: auto; background: var(--bg); }
   .mk-note { margin-top: 12px; font-size: 13px; color: var(--muted); }
-  .line { margin-top: 48px; font-size: 14px; color: var(--muted); }
+  .line { text-align: center; margin-top: 40px; font-size: 14px; color: var(--muted); }
   .line b { color: var(--fg); font-weight: 500; }
 
   /* 안내 */
   .info { padding-block: 88px 24px; }
   .info + .info { padding-top: 56px; }
   .info h2 { font-size: 20px; font-weight: 700; margin-bottom: 18px; }
-  .sizes { margin-top: 56px; }
+  .sizes { margin: 48px auto 0; max-width: 540px; }
   .tablebox { overflow-x: auto; }
-  .tablebox + .tablebox { margin-top: 36px; }
-  table { border-collapse: collapse; width: 100%; min-width: 440px; font-variant-numeric: tabular-nums; font-size: 14px; }
+  .tablebox + .tablebox { margin-top: 28px; }
+  table { border-collapse: collapse; width: 100%; min-width: 340px; font-variant-numeric: tabular-nums; font-size: 13px; }
   caption { text-align: left; font-size: 13px; color: var(--muted); padding-bottom: 6px; }
-  th, td { padding: 10px 8px; text-align: center; border-top: 1px solid var(--line); }
-  thead th { color: var(--muted); font-weight: 400; font-size: 12px; }
-  tbody th { font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 17px; letter-spacing: .04em; }
+  th, td { padding: 6px 6px; text-align: center; border-top: 1px solid var(--line); }
+  thead th { color: var(--muted); font-weight: 400; font-size: 11px; }
+  tbody th { font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 14px; letter-spacing: .04em; }
   tbody tr:last-child th, tbody tr:last-child td { border-bottom: 1px solid var(--line); }
   .note { font-size: 13px; color: var(--muted); margin-top: 10px; }
   dl { margin: 0; display: grid; grid-template-columns: 6em minmax(0, 1fr); border-top: 1px solid var(--line); }
