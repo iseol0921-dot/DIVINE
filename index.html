@@ -49,10 +49,10 @@
   @media (max-width: 640px) { .hero { flex-direction: column; align-items: stretch; } .hero img { flex: none !important; width: 100%; } }
 
   /* 상품 */
-  .item { padding-block: 140px 8px; }
-  .item header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
-  .item h2 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
-  .price { font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 24px; font-variant-numeric: tabular-nums; }
+  .item { padding-block: 120px 8px; }
+  .item header { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; margin-bottom: 44px; }
+  .item h2 { font-size: clamp(28px, 6.4vw, 40px); font-weight: 800; letter-spacing: -.02em; line-height: 1.2; }
+  .price { font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 22px; color: var(--accent); font-variant-numeric: tabular-nums; }
   .price small { font-family: var(--font-body); font-style: normal; font-weight: 500; font-size: 13px; color: var(--muted); margin-left: 2px; }
   figure { margin: 0; }
   figure + figure { margin-top: 88px; }
