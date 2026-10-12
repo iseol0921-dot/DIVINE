@@ -43,10 +43,11 @@
   .nav a { text-decoration: none; padding-block: 6px; }
   .nav a:hover { color: var(--fg); }
 
-  /* 메인 사진 */
-  .hero { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-top: 28px; }
-  .hero img { display: block; height: auto; min-width: 0; }
-  @media (max-width: 640px) { .hero { flex-direction: column; align-items: stretch; } .hero img { flex: none !important; width: 100%; } }
+  /* 메인 사진 (가로 스크롤 + 자동 넘김) */
+  .hero { margin-top: 28px; }
+  .hero-track { --h: clamp(340px, 60vw, 560px); display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--line) transparent; padding-bottom: 10px; outline-offset: 4px; }
+  .hero-track img { flex: none; display: block; height: var(--h); width: auto; scroll-snap-align: start; }
+  .hero-hint { font-size: 12px; color: var(--muted); text-align: center; margin-top: 4px; }
 
   .cta { text-align: center; margin: 36px auto 0; }
   .btn { display: inline-block; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 700; font-size: 17px; padding: 15px 36px; border: 1px solid var(--fg); }
@@ -140,9 +141,11 @@
 </header>
 
 <div class="hero wrap">
-  <img src="views/hero.jpg" width="1024" height="1536" style="flex:0.6667 1 0" alt="2026 PWS 챔피언 DIVINE 팀 공식 유니폼 단체 사진" fetchpriority="high">
-  <img src="views/hero2.jpg" width="1080" height="1350" style="flex:0.8 1 0" alt="2026 PUBG Weekly Series Phase2 우승 트로피를 든 DIVINE 선수들">
-  <img src="views/hero3.jpg" width="1536" height="1024" style="flex:0 0 100%" alt="2026 PWS 챔피언 DIVINE 선수단, 공식 유니폼 바람막이 단체 사진">
+  <div class="hero-track" id="heroTrack" tabindex="0" role="region" aria-label="메인 사진, 좌우로 넘겨 볼 수 있습니다">
+    <img src="views/hero.jpg" width="1024" height="1536" alt="2026 PWS 챔피언 DIVINE 팀 공식 유니폼 단체 사진" fetchpriority="high">
+    <img src="views/hero2.jpg" width="1080" height="1350" alt="2026 PUBG Weekly Series Phase2 우승 트로피를 든 DIVINE 선수들">
+    <img src="views/hero3.jpg" width="1500" height="1000" alt="2026 PWS 챔피언 DIVINE 선수단, 공식 유니폼 바람막이 단체 사진">
+  </div>
 </div>
 
 <p class="cta wrap"><a class="btn" href="https://naver.me/x4lKXm4G" target="_blank" rel="noopener">주문하러 가기</a><small>주문 기간 10월 22일(목) ~ 10월 30일(금)</small></p>
@@ -324,6 +327,41 @@
 
 <footer class="wrap">상품 이미지는 시안이며 실제 제품과 색감이 다를 수 있습니다.</footer>
 
+<script>
+  (function () {
+    var track = document.getElementById('heroTrack');
+    if (!track) return;
+    var imgs = track.querySelectorAll('img');
+    var DELAY = 3000, RESUME = 6000, idx = 0, timer = null, paused = false, resumeAt = 0;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function maxLeft() { return track.scrollWidth - track.clientWidth; }
+    function goTo(i) {
+      var left = Math.min(imgs[i].offsetLeft - track.offsetLeft, maxLeft());
+      track.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+    }
+    function nearest() {
+      var x = track.scrollLeft, best = 0, d = Infinity;
+      for (var i = 0; i < imgs.length; i++) {
+        var dd = Math.abs((imgs[i].offsetLeft - track.offsetLeft) - x);
+        if (dd < d) { d = dd; best = i; }
+      }
+      return best;
+    }
+    function tick() {
+      if (paused || Date.now() < resumeAt || document.hidden) return;
+      var atEnd = track.scrollLeft >= maxLeft() - 2;
+      idx = atEnd ? 0 : Math.min(nearest() + 1, imgs.length - 1);
+      goTo(idx);
+    }
+    function hold() { resumeAt = Date.now() + RESUME; }
+    ['touchstart', 'pointerdown', 'wheel', 'keydown'].forEach(function (ev) { track.addEventListener(ev, hold, { passive: true }); });
+    track.addEventListener('mouseenter', function () { paused = true; });
+    track.addEventListener('mouseleave', function () { paused = false; hold(); });
+    track.addEventListener('focusin', function () { paused = true; });
+    track.addEventListener('focusout', function () { paused = false; hold(); });
+    if (!reduce) timer = setInterval(tick, DELAY);
+  })();
+</script>
 <script>
   (function () {
     var btn = document.getElementById("copyid"), id = document.getElementById("kid");
