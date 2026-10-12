@@ -54,6 +54,13 @@
   .cta small { display: block; margin-top: 10px; font-size: 13px; color: var(--muted); }
   .order-go { text-align: center; margin-top: 36px; }
 
+  .players { padding-block: 72px 0; text-align: center; }
+  .players h2 { font-size: 20px; font-weight: 700; margin-bottom: 22px; }
+  .players ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+  .players img { display: block; width: 100%; height: auto; background: #eef1f5; }
+  .players p { margin-top: 8px; font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 15px; letter-spacing: .08em; }
+  @media (max-width: 640px) { .players ul { grid-template-columns: repeat(6, minmax(0, 1fr)); } .players li { grid-column: span 2; } .players li:nth-child(4) { grid-column: 2 / span 2; } .players li:nth-child(5) { grid-column: 4 / span 2; } }
+
   /* 상품 */
   .item { padding-block: 120px 8px; }
   .item header { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; margin-bottom: 44px; }
@@ -135,6 +142,17 @@
 </div>
 
 <p class="cta wrap"><a class="btn" href="https://naver.me/x4lKXm4G" target="_blank" rel="noopener">주문하러 가기</a><small>주문 기간 10월 22일(목) ~ 10월 30일(금)</small></p>
+
+<section class="players wrap" aria-label="DIVINE 선수단">
+  <h2>DIVINE 선수단</h2>
+  <ul>
+      <li><img src="views/player-barpo.jpg" alt="BARPO 선수" width="640" height="800" loading="lazy"><p>BARPO</p></li>
+      <li><img src="views/player-tosi.jpg" alt="TOSI 선수" width="640" height="800" loading="lazy"><p>TOSI</p></li>
+      <li><img src="views/player-wonderful.jpg" alt="WONDERFUL 선수" width="640" height="800" loading="lazy"><p>WONDERFUL</p></li>
+      <li><img src="views/player-stella.jpg" alt="STELLA 선수" width="640" height="800" loading="lazy"><p>STELLA</p></li>
+      <li><img src="views/player-loki.jpg" alt="LOKI 선수" width="640" height="800" loading="lazy"><p>LOKI</p></li>
+  </ul>
+</section>
 
 <main>
   <section class="item wrap" id="jersey">
