@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="DIVINE 팀 유니폼 티셔츠·집업 자켓, 로고 티셔츠·후드집업 예약 주문 안내">
+<meta name="description" content="DIVINE 공식 유니폼 티셔츠·바람막이, 로고 티셔츠·후드집업 예약 주문 안내">
+<meta property="og:image" content="https://divine-uniform.up.railway.app/views/hero.jpg">
 <meta property="og:type" content="website">
-<meta property="og:title" content="디바인 팀 유니폼">
-<meta property="og:description" content="DIVINE 팀 유니폼 티셔츠·집업 자켓, 로고 티셔츠·후드집업 예약 주문 안내">
+<meta property="og:title" content="디바인 공식 유니폼">
+<meta property="og:description" content="DIVINE 공식 유니폼 티셔츠·바람막이, 로고 티셔츠·후드집업 예약 주문 안내">
 <style>:root{color-scheme:light}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>디바인 팀 유니폼</title>
+<title>디바인 공식 유니폼</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&family=Noto+Sans+KR:wght@400;500;700&family=Rajdhani:wght@700&display=swap">
@@ -42,6 +43,11 @@
   .nav a { text-decoration: none; padding-block: 6px; }
   .nav a:hover { color: var(--fg); }
 
+  /* 메인 사진 */
+  .hero { display: flex; gap: 16px; align-items: flex-start; margin-top: 28px; }
+  .hero img { display: block; height: auto; min-width: 0; }
+  @media (max-width: 640px) { .hero { flex-direction: column; align-items: stretch; } .hero img { flex: none !important; width: 100%; } }
+
   /* 상품 */
   .item { padding-block: 140px 8px; }
   .item header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
@@ -54,9 +60,11 @@
   .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .views { display: flex; align-items: flex-end; gap: clamp(28px, 5vw, 48px); }
   .views img { display: block; min-width: 0; height: auto; }
+  .catalog img { display: block; width: 100%; height: auto; }
   .hint { display: none; font-size: 12px; color: var(--muted); margin-top: 4px; }
   @media (max-width: 640px) {
     .views { min-width: 680px; }
+    .catalog img { width: 780px; max-width: none; }
     .hint { display: block; }
   }
   .marking { margin-top: 48px; }
@@ -78,8 +86,9 @@
   .info { padding-block: 88px 24px; }
   .info + .info { padding-top: 56px; }
   .info h2 { font-size: 20px; font-weight: 700; margin-bottom: 18px; }
+  .sizes { margin-top: 56px; }
   .tablebox { overflow-x: auto; }
-  .tablebox + .tablebox { margin-top: 24px; }
+  .tablebox + .tablebox { margin-top: 36px; }
   table { border-collapse: collapse; width: 100%; min-width: 440px; font-variant-numeric: tabular-nums; font-size: 14px; }
   caption { text-align: left; font-size: 13px; color: var(--muted); padding-bottom: 6px; }
   th, td { padding: 10px 8px; text-align: center; border-top: 1px solid var(--line); }
@@ -105,59 +114,92 @@
   <a class="mark" href="#top">DIVINE<span>.</span></a>
   <nav class="nav" aria-label="바로가기">
     <a href="#jersey">유니폼 티</a>
-    <a href="#jacket">집업 자켓</a>
+    <a href="#jacket">바람막이</a>
     <a href="#tee">로고 티</a>
     <a href="#hood">후드집업</a>
-    <a href="#size">사이즈</a>
     <a href="#order">주문 안내</a>
   </nav>
 </header>
 
+<div class="hero wrap">
+  <img src="views/hero.jpg" width="1024" height="1536" style="flex:0.6667 1 0" alt="2026 PWS 챔피언 DIVINE 팀 공식 유니폼 단체 사진" fetchpriority="high">
+  <img src="views/hero2.jpg" width="1080" height="1350" style="flex:0.8 1 0" alt="2026 PUBG Weekly Series Phase2 우승 트로피를 든 DIVINE 선수들">
+</div>
+
 <main>
   <section class="item wrap" id="jersey">
     <header>
-      <h2>팀 유니폼 티셔츠</h2>
-      <p class="price">39,000<small>원</small></p>
+      <h2>공식 유니폼 티셔츠</h2>
+      <p class="price">86,000<small>원</small></p>
     </header>
-    <figure>
-      <figcaption>White</figcaption>
-      <div class="scroll"><div class="views"><img src="views/jersey-white-front.jpg" alt="팀 유니폼 티셔츠 화이트 앞면" width="250" height="314" style="flex:0.796 1 0"><img src="views/jersey-white-back.jpg" alt="팀 유니폼 티셔츠 화이트 뒷면" width="316" height="379" style="flex:0.834 1 0"><img src="views/jersey-white-left.jpg" alt="팀 유니폼 티셔츠 화이트 좌측면" width="111" height="314" style="flex:0.354 1 0"><img src="views/jersey-white-right.jpg" alt="팀 유니폼 티셔츠 화이트 우측면" width="112" height="314" style="flex:0.357 1 0"></div></div>
-    </figure>
-    <figure>
-      <figcaption>Black</figcaption>
-      <div class="scroll"><div class="views"><img src="views/jersey-black-front.jpg" alt="팀 유니폼 티셔츠 블랙 앞면" width="250" height="314" style="flex:0.796 1 0" loading="lazy"><img src="views/jersey-black-back.jpg" alt="팀 유니폼 티셔츠 블랙 뒷면" width="241" height="314" style="flex:0.768 1 0" loading="lazy"><img src="views/jersey-black-left.jpg" alt="팀 유니폼 티셔츠 블랙 좌측면" width="118" height="314" style="flex:0.376 1 0" loading="lazy"><img src="views/jersey-black-right.jpg" alt="팀 유니폼 티셔츠 블랙 우측면" width="119" height="314" style="flex:0.379 1 0" loading="lazy"></div></div>
+    <figure class="catalog">
+      <div class="scroll"><img src="views/catalog-jersey.jpg" alt="공식 유니폼 티셔츠 화이트·블랙, 앞면·뒷면·좌측·우측" width="1568" height="477"></div>
     </figure>
     <p class="hint">좌우로 밀어서 전체를 볼 수 있습니다.</p>
     <div class="marking" data-mk="jersey">
-      <p class="mk-title">선수 마킹 선택</p>
-      <div class="mk-list" role="radiogroup" aria-label="팀 유니폼 티셔츠 선수 마킹 선택"><button type="button" role="radio" aria-checked="true" data-name="LOKI">LOKI</button><button type="button" role="radio" aria-checked="false" data-name="BARPO">BARPO</button><button type="button" role="radio" aria-checked="false" data-name="TOSI">TOSI</button><button type="button" role="radio" aria-checked="false" data-name="STELLA">STELLA</button><button type="button" role="radio" aria-checked="false" data-name="WONDERFUL">WONDERFUL</button><button type="button" role="radio" aria-checked="false" class="none" data-name="">마킹X</button></div>
-      <div class="mk-previews"><div class="mk-item"><p class="mk-cap">White</p><canvas class="mk-canvas" role="img" aria-label="팀 유니폼 티셔츠 White 뒷면 미리보기" data-src="views/jersey-white-back-blank.jpg" data-w="316" data-h="379" data-cx="151.5" data-base="125.0" data-cap="27.0" data-maxw="146.0" data-ink="#121212" width="632" height="758"></canvas></div><div class="mk-item"><p class="mk-cap">Black</p><canvas class="mk-canvas" role="img" aria-label="팀 유니폼 티셔츠 Black 뒷면 미리보기" data-src="views/jersey-black-back-blank.jpg" data-w="249" data-h="309" data-cx="125.5" data-base="104.5" data-cap="21.5" data-maxw="106.0" data-ink="#f4f4f4" width="498" height="618"></canvas></div></div>
+      <p class="mk-title">선수 마킹 예시</p>
+      <div class="mk-list" role="radiogroup" aria-label="공식 유니폼 티셔츠 선수 마킹 예시"><button type="button" role="radio" aria-checked="true" data-name="LOKI">LOKI</button><button type="button" role="radio" aria-checked="false" data-name="BARPO">BARPO</button><button type="button" role="radio" aria-checked="false" data-name="TOSI">TOSI</button><button type="button" role="radio" aria-checked="false" data-name="STELLA">STELLA</button><button type="button" role="radio" aria-checked="false" data-name="WONDERFUL">WONDERFUL</button><button type="button" role="radio" aria-checked="false" class="none" data-name="">마킹X</button></div>
+      <div class="mk-previews"><div class="mk-item"><p class="mk-cap">White</p><canvas class="mk-canvas" role="img" aria-label="공식 유니폼 티셔츠 White 뒷면 미리보기" data-src="views/jersey-white-back-blank.jpg" data-w="316" data-h="379" data-cx="151.5" data-base="125.0" data-cap="27.0" data-maxw="146.0" data-ink="#121212" width="632" height="758"></canvas></div><div class="mk-item"><p class="mk-cap">Black</p><canvas class="mk-canvas" role="img" aria-label="공식 유니폼 티셔츠 Black 뒷면 미리보기" data-src="views/jersey-black-back-blank.jpg" data-w="249" data-h="309" data-cx="125.5" data-base="104.5" data-cap="21.5" data-maxw="106.0" data-ink="#f4f4f4" width="498" height="618"></canvas></div></div>
       <p class="mk-note">선택한 이름이 등 뒤쪽 로고 아래에 들어갑니다. 미리보기는 실제 마킹과 글자 모양이 조금 다를 수 있습니다. 주문할 때 선수 이름을 함께 알려 주세요.</p>
     </div>
     <p class="line"><b>폴리에스터 100% · 레귤러 핏 · 전체 승화전사.</b></p>
+    <div class="sizes">
+      <div class="tablebox">
+        <table>
+          <caption>사이즈, 단위 cm</caption>
+          <thead><tr><th scope="col">사이즈</th><th scope="col">가슴단면</th><th scope="col">기장</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">85</th><td>46.5</td><td>65</td></tr>
+            <tr><th scope="row">90</th><td>49</td><td>67</td></tr>
+            <tr><th scope="row">95</th><td>51.5</td><td>69</td></tr>
+            <tr><th scope="row">100</th><td>54</td><td>71</td></tr>
+            <tr><th scope="row">105</th><td>56.5</td><td>73</td></tr>
+            <tr><th scope="row">110</th><td>59</td><td>75</td></tr>
+            <tr><th scope="row">115</th><td>61.5</td><td>77</td></tr>
+            <tr><th scope="row">120</th><td>64</td><td>79</td></tr>
+            <tr><th scope="row">125</th><td>66.5</td><td>81</td></tr>
+            <tr><th scope="row">130</th><td>69</td><td>83</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">제품을 바닥에 펴놓고 단면을 측정한 사이즈입니다. 측정 방법과 소재에 따라 다소 차이가 있을 수 있으니, 평소 입는 옷의 실측 사이즈와 비교해 보세요.</p>
+    </div>
   </section>
 
   <section class="item wrap" id="jacket">
     <header>
-      <h2>팀 유니폼 집업 자켓</h2>
-      <p class="price">69,000<small>원</small></p>
+      <h2>공식 유니폼 바람막이</h2>
+      <p class="price">146,000<small>원</small></p>
     </header>
-    <figure>
-      <figcaption>White</figcaption>
-      <div class="scroll"><div class="views"><img src="views/jacket-white-front.jpg" alt="팀 유니폼 집업 자켓 화이트 앞면" width="242" height="331" style="flex:0.731 1 0" loading="lazy"><img src="views/jacket-white-back.jpg" alt="팀 유니폼 집업 자켓 화이트 뒷면" width="243" height="331" style="flex:0.734 1 0" loading="lazy"><img src="views/jacket-white-left.jpg" alt="팀 유니폼 집업 자켓 화이트 좌측면" width="119" height="331" style="flex:0.360 1 0" loading="lazy"><img src="views/jacket-white-right.jpg" alt="팀 유니폼 집업 자켓 화이트 우측면" width="141" height="331" style="flex:0.426 1 0" loading="lazy"></div></div>
-    </figure>
-    <figure>
-      <figcaption>Black</figcaption>
-      <div class="scroll"><div class="views"><img src="views/jacket-black-front.jpg" alt="팀 유니폼 집업 자켓 블랙 앞면" width="237" height="332" style="flex:0.714 1 0" loading="lazy"><img src="views/jacket-black-back.jpg" alt="팀 유니폼 집업 자켓 블랙 뒷면" width="253" height="332" style="flex:0.762 1 0" loading="lazy"><img src="views/jacket-black-left.jpg" alt="팀 유니폼 집업 자켓 블랙 좌측면" width="125" height="332" style="flex:0.377 1 0" loading="lazy"><img src="views/jacket-black-right.jpg" alt="팀 유니폼 집업 자켓 블랙 우측면" width="131" height="332" style="flex:0.395 1 0" loading="lazy"></div></div>
+    <figure class="catalog">
+      <div class="scroll"><img src="views/catalog-jacket.jpg" alt="공식 유니폼 바람막이 화이트·블랙, 앞면·뒷면·좌측·우측" width="1568" height="467"></div>
     </figure>
     <p class="hint">좌우로 밀어서 전체를 볼 수 있습니다.</p>
     <div class="marking" data-mk="jacket">
-      <p class="mk-title">선수 마킹 선택</p>
-      <div class="mk-list" role="radiogroup" aria-label="팀 유니폼 집업 자켓 선수 마킹 선택"><button type="button" role="radio" aria-checked="true" data-name="LOKI">LOKI</button><button type="button" role="radio" aria-checked="false" data-name="BARPO">BARPO</button><button type="button" role="radio" aria-checked="false" data-name="TOSI">TOSI</button><button type="button" role="radio" aria-checked="false" data-name="STELLA">STELLA</button><button type="button" role="radio" aria-checked="false" data-name="WONDERFUL">WONDERFUL</button><button type="button" role="radio" aria-checked="false" class="none" data-name="">마킹X</button></div>
-      <div class="mk-previews"><div class="mk-item"><p class="mk-cap">White</p><canvas class="mk-canvas" role="img" aria-label="팀 유니폼 집업 자켓 White 뒷면 미리보기" data-src="views/jacket-white-back-blank.jpg" data-w="245" data-h="316" data-cx="118.5" data-base="120.0" data-cap="21.0" data-maxw="106.0" data-ink="#121212" width="490" height="632"></canvas></div><div class="mk-item"><p class="mk-cap">Black</p><canvas class="mk-canvas" role="img" aria-label="팀 유니폼 집업 자켓 Black 뒷면 미리보기" data-src="views/jacket-black-back-blank.jpg" data-w="259" data-h="316" data-cx="126.0" data-base="121.0" data-cap="21.5" data-maxw="104.0" data-ink="#f4f4f4" width="518" height="632"></canvas></div></div>
+      <p class="mk-title">선수 마킹 예시</p>
+      <div class="mk-list" role="radiogroup" aria-label="공식 유니폼 바람막이 선수 마킹 예시"><button type="button" role="radio" aria-checked="true" data-name="LOKI">LOKI</button><button type="button" role="radio" aria-checked="false" data-name="BARPO">BARPO</button><button type="button" role="radio" aria-checked="false" data-name="TOSI">TOSI</button><button type="button" role="radio" aria-checked="false" data-name="STELLA">STELLA</button><button type="button" role="radio" aria-checked="false" data-name="WONDERFUL">WONDERFUL</button><button type="button" role="radio" aria-checked="false" class="none" data-name="">마킹X</button></div>
+      <div class="mk-previews"><div class="mk-item"><p class="mk-cap">White</p><canvas class="mk-canvas" role="img" aria-label="공식 유니폼 바람막이 White 뒷면 미리보기" data-src="views/jacket-white-back-blank.jpg" data-w="245" data-h="316" data-cx="118.5" data-base="120.0" data-cap="21.0" data-maxw="106.0" data-ink="#121212" width="490" height="632"></canvas></div><div class="mk-item"><p class="mk-cap">Black</p><canvas class="mk-canvas" role="img" aria-label="공식 유니폼 바람막이 Black 뒷면 미리보기" data-src="views/jacket-black-back-blank.jpg" data-w="259" data-h="316" data-cx="126.0" data-base="121.0" data-cap="21.5" data-maxw="104.0" data-ink="#f4f4f4" width="518" height="632"></canvas></div></div>
       <p class="mk-note">선택한 이름이 등 뒤쪽 로고 아래에 들어갑니다. 미리보기는 실제 마킹과 글자 모양이 조금 다를 수 있습니다. 주문할 때 선수 이름을 함께 알려 주세요.</p>
     </div>
     <p class="line"><b>폴리에스터 트랙 원단 · 레귤러 핏 · 소매 패턴 승화전사.</b></p>
+    <div class="sizes">
+      <div class="tablebox">
+        <table>
+          <caption>사이즈, 단위 cm</caption>
+          <thead><tr><th scope="col">사이즈</th><th scope="col">가슴단면</th><th scope="col">소매기장</th><th scope="col">총기장</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">85</th><td>53</td><td>56</td><td>63.5</td></tr>
+            <tr><th scope="row">90</th><td>55</td><td>57</td><td>65.5</td></tr>
+            <tr><th scope="row">95</th><td>57</td><td>58</td><td>67.5</td></tr>
+            <tr><th scope="row">100</th><td>59</td><td>59</td><td>69.5</td></tr>
+            <tr><th scope="row">105</th><td>62</td><td>60</td><td>71.5</td></tr>
+            <tr><th scope="row">110</th><td>64</td><td>61</td><td>73.5</td></tr>
+            <tr><th scope="row">115</th><td>67</td><td>62</td><td>75.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">제품을 바닥에 펴놓고 단면을 측정한 사이즈입니다. 측정 방법과 소재에 따라 다소 차이가 있을 수 있으니, 평소 입는 옷의 실측 사이즈와 비교해 보세요.</p>
+    </div>
   </section>
 
   <section class="item wrap" id="tee">
@@ -175,6 +217,24 @@
     </figure>
     <p class="hint">좌우로 밀어서 전체를 볼 수 있습니다.</p>
     <p class="line"><b>면 혼방 · 오버핏 · 디지털 프린트.</b> 가슴 왼쪽 링 로고, 등 상단 DIVINE 워드마크.</p>
+    <div class="sizes">
+      <div class="tablebox">
+        <table>
+          <caption>사이즈, 단위 cm</caption>
+          <thead><tr><th scope="col">사이즈</th><th scope="col">기장</th><th scope="col">몸통폭</th><th scope="col">어깨폭</th><th scope="col">소매장</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">SS</th><td>62</td><td>44</td><td>42</td><td>19</td></tr>
+            <tr><th scope="row">S</th><td>65</td><td>47</td><td>44</td><td>20</td></tr>
+            <tr><th scope="row">M</th><td>68</td><td>50</td><td>46</td><td>21</td></tr>
+            <tr><th scope="row">L</th><td>71</td><td>53</td><td>48</td><td>22</td></tr>
+            <tr><th scope="row">LL</th><td>74</td><td>56</td><td>50</td><td>23</td></tr>
+            <tr><th scope="row">3L</th><td>77</td><td>60</td><td>53</td><td>25</td></tr>
+            <tr><th scope="row">4L</th><td>80</td><td>64</td><td>56</td><td>26</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">제품을 바닥에 펴놓고 단면을 측정한 사이즈입니다. 측정 방법과 소재에 따라 다소 차이가 있을 수 있으니, 평소 입는 옷의 실측 사이즈와 비교해 보세요.</p>
+    </div>
   </section>
 
   <section class="item wrap" id="hood">
@@ -192,37 +252,26 @@
     </figure>
     <p class="hint">좌우로 밀어서 전체를 볼 수 있습니다.</p>
     <p class="line"><b>기모 스웨트 원단 · 오버핏 · 디지털 프린트.</b> 금속 지퍼, 앞 포켓, 리브 마감.</p>
-  </section>
-
-  <section class="info wrap" id="size">
-    <h2>사이즈표</h2>
-    <div class="tablebox">
-      <table>
-        <caption>티셔츠류 (팀 유니폼 티셔츠 · 로고 티셔츠), 단위 cm</caption>
-        <thead><tr><th scope="col">사이즈</th><th scope="col">가슴단면</th><th scope="col">총장</th><th scope="col">어깨너비</th><th scope="col">소매길이</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">S</th><td>52</td><td>69</td><td>45</td><td>20</td></tr>
-          <tr><th scope="row">M</th><td>54</td><td>71</td><td>47</td><td>21</td></tr>
-          <tr><th scope="row">L</th><td>56</td><td>73</td><td>49</td><td>22</td></tr>
-          <tr><th scope="row">XL</th><td>58</td><td>75</td><td>51</td><td>23</td></tr>
-          <tr><th scope="row">2XL</th><td>60</td><td>77</td><td>53</td><td>24</td></tr>
-        </tbody>
-      </table>
+    <div class="sizes">
+      <div class="tablebox">
+        <table>
+          <caption>사이즈, 단위 cm</caption>
+          <thead><tr><th scope="col">사이즈</th><th scope="col">전체기장</th><th scope="col">가슴넓이</th><th scope="col">어깨넓이</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">S</th><td>67</td><td>55</td><td>63</td></tr>
+            <tr><th scope="row">M</th><td>69</td><td>57</td><td>64</td></tr>
+            <tr><th scope="row">L</th><td>71</td><td>59</td><td>65</td></tr>
+            <tr><th scope="row">XL</th><td>73</td><td>61</td><td>66</td></tr>
+            <tr><th scope="row">2XL</th><td>75</td><td>64</td><td>67.5</td></tr>
+            <tr><th scope="row">3XL</th><td>77</td><td>66</td><td>70</td></tr>
+            <tr><th scope="row">4XL</th><td>79</td><td>70</td><td>72</td></tr>
+            <tr><th scope="row">5XL</th><td>81</td><td>73</td><td>75</td></tr>
+            <tr><th scope="row">6XL</th><td>83</td><td>76</td><td>77</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">제품을 바닥에 펴놓고 단면을 측정한 사이즈입니다. 측정 방법과 소재에 따라 다소 차이가 있을 수 있으니, 평소 입는 옷의 실측 사이즈와 비교해 보세요.</p>
     </div>
-    <div class="tablebox">
-      <table>
-        <caption>집업류 (팀 유니폼 집업 자켓 · 후드집업), 단위 cm</caption>
-        <thead><tr><th scope="col">사이즈</th><th scope="col">가슴단면</th><th scope="col">총장</th><th scope="col">어깨너비</th><th scope="col">소매길이</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">S</th><td>56</td><td>66</td><td>50</td><td>58</td></tr>
-          <tr><th scope="row">M</th><td>58</td><td>68</td><td>52</td><td>60</td></tr>
-          <tr><th scope="row">L</th><td>60</td><td>70</td><td>54</td><td>62</td></tr>
-          <tr><th scope="row">XL</th><td>62</td><td>72</td><td>56</td><td>64</td></tr>
-          <tr><th scope="row">2XL</th><td>64</td><td>74</td><td>58</td><td>66</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note">모든 상품은 남녀공용입니다. 측정 방법에 따라 1~3cm 차이가 날 수 있습니다.</p>
   </section>
 
   <section class="info wrap" id="order">
